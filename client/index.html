@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <h1>WebSocket</h1>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const socket = new WebSocket('ws://localhost:8080');
+
+    
+      socket.addEventListener('open', (event) => {
+        console.log('Connected to WebSocket server');
+        
+
+        socket.send('Hello, Server!');
+      });
+
+    
+      socket.addEventListener('message', (event) => {
+        console.log(`Received message from server: ${event.data}`);
+      });
+
+      socket.addEventListener('close', (event) => {
+        console.log('Connection closed');
+      });
+
+      socket.addEventListener('error', (error) => {
+        console.error('WebSocket error:', error);
+      });
+    });
+  </script>
+</body>
+</html>
