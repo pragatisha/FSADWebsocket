@@ -13,8 +13,6 @@
     
       socket.addEventListener('open', (event) => {
         console.log('Connected to WebSocket server');
-        
-
         socket.send('Hello, Server!');
       });
 
