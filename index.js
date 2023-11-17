@@ -4,11 +4,6 @@ const express = require('express');
 const path = require('path')
 
 
-
-const app = express();
-
-app.use(express.static(path.join(__dirname, 'client')))
-
 const server = http.createServer((req, res) => {
   res.writeHead(200, { 'Content-Type': 'text/plain' });
   res.end()
